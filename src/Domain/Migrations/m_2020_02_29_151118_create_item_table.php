@@ -16,12 +16,12 @@ class m_2020_02_29_151118_create_item_table extends BaseCreateTableMigration
         return function (Blueprint $table) {
             $table->integer('id')->autoIncrement()->comment('Идентификатор');
             $table->integer('book_id')->comment('');
-            $table->integer('parent_id')->comment('');
+            $table->integer('parent_id')->nullable()->comment('');
             $table->string('code')->comment('');
             $table->string('entity')->comment('');
             $table->smallInteger('status')->comment('Статус');
-            $table->integer('sort')->comment('Порядок сортировки');
-            $table->string('props')->comment('');
+            $table->integer('sort')->nullable()->comment('Порядок сортировки');
+            $table->string('props')->nullable()->comment('');
             $table->dateTime('created_at')->comment('Время создания');
             $table->dateTime('updated_at')->nullable()->comment('Время обновления');
         };
